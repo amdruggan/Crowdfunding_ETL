@@ -58,4 +58,4 @@ CREATE TABLE Campaign (
     FOREIGN KEY (contact_ID) REFERENCES Contacts(contact_ID),
     FOREIGN KEY (category_ID) REFERENCES Category(category_ID),
     FOREIGN KEY (subcategory_ID) REFERENCES Subcategory(subcategory_ID)
-)
+);
