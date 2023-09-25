@@ -27,12 +27,13 @@ CREATE TABLE Subcategory (
 );
 
 --Campaign table with following columns:
---campaign_ID as int primary key
+--cf_ID as int primary key
 --contact_ID as int foreign key to Contacts.contact_ID
 --company_name varchar
 --description varchar
 --goal int
 --pledged int
+--outcome varchar
 --backers_count int
 --country varchar(2)
 --currency varchar(3)
@@ -42,12 +43,13 @@ CREATE TABLE Subcategory (
 --subcategory_ID varchar foreign key to Subcategory.subcategory_ID
 --sql:
 CREATE TABLE Campaign (
-    campaign_ID int PRIMARY KEY,
+    cf_id int PRIMARY KEY,
     contact_ID int,
     company_name varchar(255),
     description varchar(255),
     goal int,
     pledged int,
+    outcome varchar(255),
     backers_count int,
     country varchar(2),
     currency varchar(3),
@@ -58,4 +60,4 @@ CREATE TABLE Campaign (
     FOREIGN KEY (contact_ID) REFERENCES Contacts(contact_ID),
     FOREIGN KEY (category_ID) REFERENCES Category(category_ID),
     FOREIGN KEY (subcategory_ID) REFERENCES Subcategory(subcategory_ID)
-);
+);   
